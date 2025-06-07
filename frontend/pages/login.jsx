@@ -36,7 +36,7 @@ export default function Login() {
       }
 
       localStorage.setItem('token', data.token);
-      router.push('/dashboard'); // redireciona após login
+      router.push('/domains'); // redireciona após login
     } catch {
       setError('Erro ao conectar com o servidor.');
     }
