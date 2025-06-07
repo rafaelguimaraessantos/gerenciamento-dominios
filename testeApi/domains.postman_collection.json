@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "2b702114-4927-41c4-b001-eb19fe786434",
+		"name": "domains",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18114936",
+		"_collection_link": "https://solar-station-864614.postman.co/workspace/New-Team-Workspace~85da5b25-fa8a-4e58-ae82-815cbfaf1e14/collection/18114936-2b702114-4927-41c4-b001-eb19fe786434?action=share&source=collection_link&creator=18114936"
+	},
+	"item": [
+		{
+			"name": "getDominio",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "HXNohWmGUyhGUhETmzpc8kaxyGKKdNakBdtExoxLbc6db446",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 2|HXNohWmGUyhGUhETmzpc8kaxyGKKdNakBdtExoxLbc6db446",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/domains",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"domains"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "novoDominio",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "HXNohWmGUyhGUhETmzpc8kaxyGKKdNakBdtExoxLbc6db446",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Exemplo Domain\",\r\n  \"dominio\": \"exemplo.com\",\r\n  \"cliente\": \"Cliente Exemplo\",\r\n  \"ativo\": true,\r\n  \"data_registro\": \"2025-06-01\",\r\n  \"data_expiracao\": \"2026-06-01\",\r\n  \"observacoes\": \"Observações sobre o domínio\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/domains",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"domains"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "alterarDominio",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "HXNohWmGUyhGUhETmzpc8kaxyGKKdNakBdtExoxLbc6db446",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Nome atualizado\",\r\n  \"dominio\": \"dominioatualizado.com\",\r\n  \"cliente\": \"Cliente Atualizado\",\r\n  \"ativo\": true,\r\n  \"data_registro\": \"2025-06-01\",\r\n  \"data_expiracao\": \"2026-06-01\",\r\n  \"observacoes\": \"Observações atualizadas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/domains/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"domains",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletarDominio",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "HXNohWmGUyhGUhETmzpc8kaxyGKKdNakBdtExoxLbc6db446",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/domains/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"domains",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

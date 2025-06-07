@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "8691d465-54eb-41ed-94be-a34502ff1968",
+		"name": "usuario",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18114936",
+		"_collection_link": "https://solar-station-864614.postman.co/workspace/New-Team-Workspace~85da5b25-fa8a-4e58-ae82-815cbfaf1e14/collection/18114936-8691d465-54eb-41ed-94be-a34502ff1968?action=share&source=collection_link&creator=18114936"
+	},
+	"item": [
+		{
+			"name": "registrarUsuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"hunter\",\r\n  \"email\": \"hunter@example.com\",\r\n  \"password\": \"123456\",\r\n  \"password_confirmation\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "alterarUsuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "6|jTAREApBebVnBeXfftIWOwr58o8lB6HVPPOrJczFa0d8ddc2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "6|jTAREApBebVnBeXfftIWOwr58o8lB6HVPPOrJczFa0d8ddc2",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Novo Nome\",\r\n  \"email\": \"novonome@example.com\",\r\n  \"password\": \"nova_senha\",\r\n  \"password_confirmation\": \"nova_senha\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/users/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletarUsuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "6|jTAREApBebVnBeXfftIWOwr58o8lB6HVPPOrJczFa0d8ddc2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "6|jTAREApBebVnBeXfftIWOwr58o8lB6HVPPOrJczFa0d8ddc2",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/users/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listarUsuarios",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 7|XpHBi8bSz3WQ7dny9LbnWCsYPSmbk1DKxzWvqcKH9d65754a",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listarUsuarioEspecifico",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
