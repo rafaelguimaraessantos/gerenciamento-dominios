@@ -1,0 +1,53 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: gerenciamento_dominios_backend
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - ./backend:/var/www/html
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=laravel_db
+      - DB_USERNAME=root
+      - DB_PASSWORD=rootpassword
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: gerenciamento_dominios_frontend
+    restart: unless-stopped
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000/api
+
+  db:
+    image: mysql:8.0
+    container_name: gerenciamento_dominios_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: laravel_db
+      # REMOVIDO: MYSQL_USER: root
+      # REMOVIDO: MYSQL_PASSWORD: rootpassword
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
