@@ -44,8 +44,13 @@ class DomainController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $domain = Domain::findOrFail($id);
+
+        return response()->json([
+            'data' => $domain
+        ], 200);
     }
+
 
     /**
      * Update the specified resource in storage.
